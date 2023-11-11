@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+    <title>JavaScript - programowanie w środowisku przeglądarki</title>
+    <style>
+        .errorText {
+            color: red;
+        }
+    </style>
+</head>
+<body style="background-color:navajowhite;">
+<header style="background-color:sandybrown;">
+    <h2 style="text-align: center;">Zadanie 4</h2>
+</header>
+<form id="myForm" onsubmit="return validateForm()">
+    <div style="text-align: center">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login">
+        <span id="loginError"><p class="errorText"></p></span>
+    </div>
+    <div style="text-align: center">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError"><p class="errorText"></p></span>
+    </div>
+    <div style="text-align: center">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<script>
+    function validateForm() {
+        let isValid = true;
+        const login = document.getElementById('login').value;
+        const email = document.getElementById('email').value;
+        const loginError = document.querySelector('#loginError .errorText');         //szuka element nameError i w nim element .error_text
+        const emailError = document.querySelector('#emailError .errorText');         //szuka element emailError i w nim element .error_text
+        const nameLength = login.trim().length;                                      // trim usuwa białe znaki(spacje)
+
+        if (nameLength < 2 || nameLength > 60) {
+            loginError.textContent = 'Name must be between 2 and 60 characters long.';
+            isValid = false;
+        } else {
+            loginError.textContent = '';
+        }
+
+        if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            emailError.textContent = 'Please enter a valid email address';
+            isValid = false;
+        } else {
+            emailError.textContent = '';
+        }
+
+        if (isValid) {
+            window.open('https://pja.edu.pl');
+        }
+
+        return isValid;
+    }
+</script>
+</body>
+</html>
