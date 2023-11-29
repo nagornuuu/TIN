@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .add-button {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .add-button:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+    </style>
+    <title>Employee List</title>
+</head>
+
+<body>
+<h1>Employee List</h1>
+<ul>
+    <% employees.forEach(employee => { %>
+    <li>
+        <a href="/employees/<%= employee.id %>">
+            <%= employee.name %> - <%= employee.position %>
+        </a>
+    </li>
+    <% }); %>
+</ul>
+<a href="/employees/add" class="add-button">Add Employee</a>
+</body>
+
+</html>
