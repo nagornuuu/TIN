@@ -1,11 +1,9 @@
-/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
     background-color: #f4f4f4;
 }
 
-/* Form Styles */
 form {
     max-width: 400px;
     margin: 20px auto;
@@ -44,7 +42,6 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Result Styles */
 h1 {
     color: #333;
 }
