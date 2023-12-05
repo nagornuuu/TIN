@@ -11,7 +11,7 @@ function getAllEmployees() {
             return [];
         }
 
-        // Przetwórz surowe dane na tablicę pracowników
+        // Przetwórz dane na tablice pracowników
         const employees = JSON.parse(rawData);
 
         for (let i = 0; i < employees.length; i++) {
